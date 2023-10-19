@@ -1,24 +1,3 @@
-//const configurationObject = {
-  //  method: "POST",
-    //headers: {
-      //"Content-Type": "application/json",
-      //"Accept": "application/json",
-    //},
-    //body: JSON.stringify({
-      //dogName: "Byron",
-      //dogBreed: "Poodle",
-    //}),
-  //};
-  
- // fetch("http://localhost:3000/dogs", configurationObject)
-   // .then(function (response) {
-   // return response.json();
-   // })
-    //.then(function (object) {
-    //console.log(object);
-    //});
-
-
 function submitData(userName, userEmail) {
     return fetch ("http://localhost:3000/users", {
         method: "POST",
@@ -35,11 +14,12 @@ function submitData(userName, userEmail) {
     return response.json()
     })
     .then(function(object) {
-    console.log(object)
+    // return (object)
+    document.getElementById("test").innerHTML = object.id
     })
     .catch(function(error) {
         alert("Something Went Wrong!")
-        console.log(error.message)
+        document.getElementById("test").innerHTML = (error.message)
     })
 }
 
